@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Lab | Kanban Board</title>
+  <link rel="stylesheet" href="task2.css">
+  <script src="task2.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="task1.html">JS LAB<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Game</a>
+      <a class="active" href="task2.html" aria-current="page">Kanban</a>
+      <a href="task3.html">Tickets</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <p class="eyebrow">TASK 02 / ARRAYS & DOM</p>
+    <h1>Project <span>Board</span></h1>
+    <p class="subtitle">
+      Organize your tasks, track progress and stay productive.
+    </p>
+
+    <section class="toolbar" aria-label="Board controls">
+      <div class="input-group">
+        <label for="newTask">New task</label>
+        <input id="newTask" placeholder="Enter task title">
+      </div>
+
+      <div class="input-group">
+        <label for="newTag">Category</label>
+        <select id="newTag">
+          <option value="Design">Design</option>
+          <option value="Development">Development</option>
+          <option value="Testing">Testing</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="newPriority">Priority</label>
+        <select id="newPriority">
+          <option value="1">High</option>
+          <option value="2">Medium</option>
+          <option value="3">Low</option>
+        </select>
+      </div>
+
+      <button id="addTask" type="button">+ Add Task</button>
+    </section>
+
+    <p id="notice" class="notice" role="status" aria-live="polite"></p>
+
+    <section class="filters" aria-label="Task filters">
+      <input id="search" type="search" placeholder="Search tasks...">
+
+      <select id="filter">
+        <option value="All">All categories</option>
+        <option value="Design">Design</option>
+        <option value="Development">Development</option>
+        <option value="Testing">Testing</option>
+      </select>
+
+      <select id="sort">
+        <option value="default">Default order</option>
+        <option value="priority">Sort by priority</option>
+      </select>
+    </section>
+
+    <section class="progress-section">
+      <div class="progress-label">
+        <strong>Project Progress</strong>
+        <span id="progressText">0%</span>
+      </div>
+      <div
+        id="progressBar"
+        class="progress-bar"
+        role="progressbar"
+        aria-label="Project completion"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+      >
+        <div id="progressFill"></div>
+      </div>
+    </section>
+
+    <section id="board" class="board" aria-label="Kanban board">
+      <div class="column">
+        <h2>To Do <span id="todoCount">0</span></h2>
+        <div id="todo" class="task-list"></div>
+      </div>
+
+      <div class="column">
+        <h2>In Progress <span id="progressCount">0</span></h2>
+        <p class="limit">Maximum 3 tasks</p>
+        <div id="inprogress" class="task-list"></div>
+      </div>
+
+      <div class="column">
+        <h2>Done <span id="doneCount">0</span></h2>
+        <div id="done" class="task-list"></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

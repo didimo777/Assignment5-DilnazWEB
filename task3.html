@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Lab | Ticket Builder</title>
+  <link rel="stylesheet" href="task3.css">
+  <script src="task3.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="task1.html">JS LAB<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Game</a>
+      <a href="task2.html">Kanban</a>
+      <a class="active" href="task3.html" aria-current="page">Tickets</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <p class="eyebrow">TASK 03 / EVENTS & VALIDATION</p>
+    <h1>Ticket <span>Builder</span></h1>
+    <p class="subtitle">
+      Book your next experience with real-time validation.
+    </p>
+
+    <div class="layout">
+      <section class="panel">
+        <h2>Booking Details</h2>
+        <p class="description">Fill in the form to reserve your tickets.</p>
+
+        <div id="errorSummary" class="error-summary"
+             role="alert" tabindex="-1" hidden></div>
+
+        <form id="ticketForm" novalidate>
+          <div class="field">
+            <label for="event">Event</label>
+            <select id="event" name="event" required>
+              <option value="">Choose an event</option>
+              <option value="Music Festival">Music Festival</option>
+              <option value="Art Exhibition">Art Exhibition</option>
+              <option value="Tech Conference">Tech Conference</option>
+            </select>
+            <small class="error" id="eventError"></small>
+          </div>
+
+          <div class="field">
+            <label for="date">Event Date</label>
+            <input id="date" name="date" type="date" required>
+            <small class="error" id="dateError"></small>
+          </div>
+
+          <div class="field">
+            <label for="ticketType">Ticket Type</label>
+            <select id="ticketType" name="ticketType" required>
+              <option value="">Choose a ticket</option>
+              <option value="Standard">Standard — 5000 ₸</option>
+              <option value="Premium">Premium — 10000 ₸</option>
+              <option value="VIP">VIP — 20000 ₸</option>
+            </select>
+            <small class="error" id="ticketTypeError"></small>
+          </div>
+
+          <div class="field">
+            <label for="quantity">Quantity</label>
+            <input id="quantity" name="quantity"
+                   type="number" min="1" max="6"
+                   step="1" value="1" required>
+            <small class="error" id="quantityError"></small>
+          </div>
+
+          <div class="field">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" name="fullName"
+                   type="text" minlength="2"
+                   maxlength="60" required
+                   placeholder="Your full name">
+            <small class="error" id="fullNameError"></small>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input id="email" name="email"
+                   type="email" required
+                   placeholder="example@gmail.com">
+            <small class="error" id="emailError"></small>
+          </div>
+
+          <div class="field">
+            <label for="promo">Promo Code (optional)</label>
+            <input id="promo" name="promo"
+                   type="text" placeholder="Try SAVE10">
+            <small class="error" id="promoError"></small>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Confirm Booking →
+          </button>
+        </form>
+      </section>
+
+      <aside class="panel preview-panel">
+        <h2>Live Preview</h2>
+        <p class="description">Your ticket updates as you type.</p>
+
+        <div class="ticket">
+          <p class="ticket-label">YOUR EXPERIENCE</p>
+          <h3 id="previewEvent">Select an event</h3>
+
+          <div class="ticket-row">
+            <span>Date</span>
+            <strong id="previewDate">Not selected</strong>
+          </div>
+
+          <div class="ticket-row">
+            <span>Type</span>
+            <strong id="previewType">Not selected</strong>
+          </div>
+
+          <div class="ticket-row">
+            <span>Quantity</span>
+            <strong id="previewQuantity">1</strong>
+          </div>
+
+          <div class="ticket-row">
+            <span>Guest</span>
+            <strong id="previewName">Your name</strong>
+          </div>
+
+          <div class="ticket-row">
+            <span>Discount</span>
+            <strong id="previewDiscount">0%</strong>
+          </div>
+
+          <div class="ticket-total">
+            <span>Total Price</span>
+            <strong id="previewTotal">0 ₸</strong>
+          </div>
+        </div>
+
+        <div id="result" class="result" aria-live="polite"></div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Lab | Higher or Lower</title>
+  <link rel="stylesheet" href="task1.css">
+  <script src="task1.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">JS LAB<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a class="active" href="task1.html" aria-current="page">Game</a>
+      <a href="task2.html">Kanban</a>
+      <a href="task3.html">Tickets</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <p class="eyebrow">TASK 01 / JAVASCRIPT BASICS</p>
+    <h1>Higher <span>or</span> Lower</h1>
+    <p class="subtitle">
+      Predict the next number. Build your streak.
+      You have only three lives!
+    </p>
+
+    <section class="game-card" aria-label="Higher or Lower game">
+      <div class="stats">
+        <div>
+          <small>Lives</small>
+          <strong id="lives">3</strong>
+        </div>
+        <div>
+          <small>Current streak</small>
+          <strong id="streak">0</strong>
+        </div>
+        <div>
+          <small>Best streak</small>
+          <strong id="best">0</strong>
+        </div>
+      </div>
+
+      <div class="number-area">
+        <p>CURRENT NUMBER</p>
+        <div id="number" class="number">50</div>
+        <p>Will the next number be higher or lower?</p>
+      </div>
+
+      <p id="message" class="message" role="status" aria-live="polite">
+        Make your first guess!
+      </p>
+
+      <div class="actions">
+        <button id="higher" type="button">↑ Higher</button>
+        <button id="lower" type="button">↓ Lower</button>
+      </div>
+
+      <button id="restart" class="restart" type="button">
+        ↻ Restart Game
+      </button>
+    </section>
+  </main>
+</body>
+</html>

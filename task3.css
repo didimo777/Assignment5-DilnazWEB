@@ -1,0 +1,293 @@
+
+:root {
+  --bg: #0c1020;
+  --surface: #171d31;
+  --accent: #a78bfa;
+  --text: #f8fafc;
+  --muted: #a3acc2;
+  --border: #303950;
+  --danger: #fda4af;
+  --success: #86efac;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  min-height: 76px;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.logo span,
+h1 span {
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+nav a:hover,
+nav a.active {
+  background: var(--surface);
+  color: white;
+}
+
+.page {
+  width: min(1100px, 92%);
+  margin: 55px auto;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+h1 {
+  font-size: clamp(35px, 5vw, 55px);
+  margin: 12px 0;
+}
+
+.subtitle,
+.description {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.subtitle {
+  margin-bottom: 35px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: start;
+  gap: 25px;
+}
+
+.panel {
+  min-width: 0;
+  padding: 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+}
+
+.panel h2 {
+  margin: 0 0 10px;
+}
+
+.description {
+  margin-bottom: 25px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: white;
+  font: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+input[aria-invalid="false"]:not(:placeholder-shown) {
+  border-color: var(--success);
+}
+
+.error {
+  display: block;
+  color: var(--danger);
+  margin-top: 7px;
+  font-size: 12px;
+  min-height: 15px;
+}
+
+.error-summary {
+  background: #482b3b;
+  color: #ffe4e6;
+  border: 1px solid var(--danger);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.error-summary[hidden] {
+  display: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #171127;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.ticket {
+  padding: 25px;
+  background: linear-gradient(145deg, #35275c, #1d2741);
+  border: 1px solid #65518e;
+  border-radius: 18px;
+}
+
+.ticket-label {
+  color: #c4b5fd;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.ticket h3 {
+  font-size: 25px;
+  margin: 18px 0 30px;
+  overflow-wrap: anywhere;
+}
+
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px dashed #65518e;
+  font-size: 13px;
+}
+
+.ticket-row span {
+  color: #c4b5d7;
+}
+
+.ticket-row strong {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.ticket-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 25px;
+}
+
+.ticket-total strong {
+  color: #c4b5fd;
+  font-size: 24px;
+}
+
+.result {
+  margin-top: 20px;
+}
+
+.confirmation {
+  padding: 20px;
+  border: 1px solid var(--success);
+  background: #19382f;
+  border-radius: 13px;
+  overflow-wrap: anywhere;
+}
+
+.confirmation h3 {
+  color: var(--success);
+  margin-top: 0;
+}
+
+.confirmation p {
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 16px;
+    flex-direction: column;
+  }
+
+  .page {
+    margin: 35px auto;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+
+  .ticket {
+    padding: 18px;
+  }
+}
